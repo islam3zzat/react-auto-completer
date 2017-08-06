@@ -10,5 +10,32 @@ class Autocomplete extends Component {
   );
   }
 }
+Autocomplete.propTypes = {
+  placeholder: PropTypes.string,
+  api: PropTypes.string,
+  param: PropTypes.string,
+  method: PropTypes.string,
+  closeOnSelect: PropTypes.bool,
+  resetOnSelect: PropTypes.bool,
+  path: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  optionsClass: String,
+  optionClass: String,
+  inputClass: String,
+};
+Autocomplete.defaultProps = {
+  placeholder: 'Placeholder',
+  api: 'Placeholder',
+  param: 'q',
+  method: 'GET',
+  closeOnSelect: true,
+  resetOnSelect: true,
+  path: null,
+  optionsStyles: null,
+  optionStyles: null,
+  inputStyles: null,
+  optionsClass: String,
+  optionClass: String,
+  inputClass: String,
+};
 
 export default Autocomplete;
