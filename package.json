@@ -1,6 +1,6 @@
 {
   "name": "react-auto-completer",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "private": false,
   "dependencies": {
     "react": "^15.6.1",
