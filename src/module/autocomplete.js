@@ -1,41 +1,34 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Input from './Input'
+import Results from './Results'
 
 class Autocomplete extends Component {
+  constructor(props) {
+    super(props)
+  }
+  
   render() {
     return (
-      <div className="Autocomplete">
-        <input placeholder={this.props.placeholder} type="text"/>
-      </div>
-  );
+        <div className="react-autocomplete">
+          <Input placeholder={this.props.placeholder}/>
+          <Results list={this.props.list}/>
+        </div>
+    );
+  }
+  
+  static get propTypes() {
+    return {
+      placeholder: PropTypes.string,
+      list: PropTypes.array
+    }
+  }
+  
+  static get defaultProps() {
+    return {
+      placeholder: 'Placeholder',
+      list: []
+    }
   }
 }
-Autocomplete.propTypes = {
-  placeholder: PropTypes.string,
-  api: PropTypes.string,
-  param: PropTypes.string,
-  method: PropTypes.string,
-  closeOnSelect: PropTypes.bool,
-  resetOnSelect: PropTypes.bool,
-  path: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-  optionsClass: String,
-  optionClass: String,
-  inputClass: String,
-};
-Autocomplete.defaultProps = {
-  placeholder: 'Placeholder',
-  api: 'Placeholder',
-  param: 'q',
-  method: 'GET',
-  closeOnSelect: true,
-  resetOnSelect: true,
-  path: null,
-  optionsStyles: null,
-  optionStyles: null,
-  inputStyles: null,
-  optionsClass: String,
-  optionClass: String,
-  inputClass: String,
-};
-
 export default Autocomplete;
