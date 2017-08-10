@@ -14,12 +14,12 @@ npm install --save react-auto-completer
 // ...
 import Autocomplete 'react-auto-completer'
 ```
-```
+
 ## Usage
 ``` html
 <Autocomplete
-  :placeholder=<placeholder>
-  :list=<list>
+  placeholder=<placeholder>
+  list=<list>
   >
 </Autocomplete>
 ```
@@ -29,7 +29,7 @@ import Autocomplete 'react-auto-completer'
 | Prop          |  Type          |      Description      |  Default value |
 |---------------|:--------------:|:---------------------|:---------------|
 | placeholder   | String         | input Placeholder     | Placeholder    |
-| list          | Array          | static results list   | empty array    |
+| list          | Array          | static results list   | Empty array [] |
 
 
 ## Build Setup
