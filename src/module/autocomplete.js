@@ -4,10 +4,6 @@ import Input from './Input'
 import Results from './Results'
 
 class Autocomplete extends Component {
-  constructor(props) {
-    super(props)
-  }
-  
   render() {
     return (
         <div className="react-autocomplete">
@@ -17,6 +13,10 @@ class Autocomplete extends Component {
     );
   }
   
+  /**
+   * defines proptypes
+   * @return {{placeholder: *, list: *}}
+   */
   static get propTypes() {
     return {
       placeholder: PropTypes.string,
@@ -24,6 +24,10 @@ class Autocomplete extends Component {
     }
   }
   
+  /**
+   * sets default proptypes
+   * @return {{placeholder: string, list: Array}}
+   */
   static get defaultProps() {
     return {
       placeholder: 'Placeholder',
