@@ -5,10 +5,23 @@ import Results from './component/Results'
 import Wrapper from './styled/Wrapper'
 
 class Autocomplete extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      value: ''
+    }
+  }
+  
+  changed(value){
+    if(value){
+      this.setState({value})
+    }
+  }
+  
   render() {
     return (
         <Wrapper>
-          <Input placeholder={this.props.placeholder}/>
+          <Input value={this.state.value} changed={this.changed.bind(this)} placeholder={this.props.placeholder}/>
           <Results list={this.props.list}/>
         </Wrapper>
     );
