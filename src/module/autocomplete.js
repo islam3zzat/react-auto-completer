@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Input from './Input'
-import Results from './Results'
+import Input from './component/Input'
+import Results from './component/Results'
+import Wrapper from './styled/Wrapper'
 
 class Autocomplete extends Component {
   render() {
