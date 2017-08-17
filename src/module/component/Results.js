@@ -1,15 +1,16 @@
 import React from 'react'
+import ResultItem from './ResultsItem'
+import Results from '../styled/Results'
 
 export default ({list}) => {
   if (list.length) {
-    return <ul className="react-autocomplete__list">
+    return <Results>
       {
         list.map((listItem, i) => (
-            <li className="react-autocomplete__result-item" key={`result${i}`}>{listItem}</li>
+            <ResultItem key={`result${i}`} data={listItem} />
         ))
       }
-    </ul>
+    </Results>
   }
-  
   return null
 }
