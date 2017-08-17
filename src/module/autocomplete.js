@@ -6,10 +6,10 @@ import Results from './Results'
 class Autocomplete extends Component {
   render() {
     return (
-        <div className="react-autocomplete">
+        <Wrapper>
           <Input placeholder={this.props.placeholder}/>
           <Results list={this.props.list}/>
-        </div>
+        </Wrapper>
     );
   }
   
