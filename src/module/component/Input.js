@@ -1,10 +1,12 @@
 import React from 'react'
 import Input from '../styled/Input'
 
-export default (props) => (
+export default ({value, changed, placeholder}) => (
     <Input
         className="react-autocomplete__input"
         type="text"
-        placeholder={props.placeholder}
+        onChange={(e)=>{changed(e.target.value)}}
+        value={value}
+        placeholder={placeholder}
     />
 )
