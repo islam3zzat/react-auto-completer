@@ -4,6 +4,7 @@
   "private": false,
   "dependencies": {
     "react": "^15.6.1",
+    "styled-components": "^2.1.2",
     "webpack": "^2.6.1"
   },
   "devDependencies": {
