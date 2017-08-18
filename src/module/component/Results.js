@@ -2,12 +2,12 @@ import React from 'react'
 import ResultItem from './ResultsItem'
 import Results from '../styled/Results'
 
-export default ({list}) => {
-  if (list.length) {
+export default ({options}) => {
+  if (options.length) {
     return <Results>
       {
-        list.map((listItem, i) => (
-            <ResultItem key={`result${i}`} data={listItem} />
+        options.map((option, i) => (
+            <ResultItem key={`result${i}`} data={option} />
         ))
       }
     </Results>
