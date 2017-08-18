@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import Input from './component/Input'
 import Results from './component/Results'
 import Wrapper from './styled/Wrapper'
+import debounce from 'lodash.debounce'
 
 class Autocomplete extends Component {
   constructor(props){
     super(props)
     this.state = {
-      value: ''
+      value: '',
+      options: props.source
     }
+    this.getData = debounce(this.getData, 300)
   }
   
   /**
