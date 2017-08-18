@@ -55,7 +55,7 @@ class Autocomplete extends Component {
   static get propTypes() {
     return {
       placeholder: PropTypes.string,
-      list: PropTypes.array
+      source: PropTypes.array
     }
   }
   
@@ -66,7 +66,7 @@ class Autocomplete extends Component {
   static get defaultProps() {
     return {
       placeholder: 'Placeholder',
-      list: []
+      source: []
     }
   }
 }
