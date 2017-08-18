@@ -29,8 +29,8 @@ class Autocomplete extends Component {
   render() {
     return (
         <Wrapper>
-          <Input value={this.state.value} changed={this.changed.bind(this)} placeholder={this.props.placeholder}/>
-          <Results list={this.props.list}/>
+          <Input value={this.state.value}  changed={this.changed.bind(this)} placeholder={this.props.placeholder}/>
+          <Results options={this.state.options}/>
         </Wrapper>
     );
   }
