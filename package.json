@@ -3,6 +3,8 @@
   "version": "0.0.33",
   "private": false,
   "dependencies": {
+    "axios": "^0.16.2",
+    "lodash.debounce": "^4.0.8",
     "react": "^15.6.1",
     "styled-components": "^2.1.2",
     "webpack": "^2.6.1"

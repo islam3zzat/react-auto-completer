@@ -12,12 +12,20 @@ class Autocomplete extends Component {
     }
   }
   
+  /**
+   * on input change
+   * @param value
+   */
   changed(value){
     if(value){
       this.setState({value})
     }
   }
   
+  /**
+   * render the component
+   * @return {XML}
+   */
   render() {
     return (
         <Wrapper>
@@ -26,6 +34,7 @@ class Autocomplete extends Component {
         </Wrapper>
     );
   }
+  
   
   /**
    * defines proptypes
