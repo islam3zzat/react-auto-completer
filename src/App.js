@@ -12,7 +12,9 @@ class App extends Component {
         </div>
         <Autocomplete
           placeholder="Search..."
-          list={['JavaScript', 'Node.js', 'HTML', 'CSS']}
+          source={["Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipisicing", "elit.", "Asperiores,",
+            "fugiat", "quia", "quibusdam", "quidem", "repellendus", "sunt.", "Minima,", "nam", "pariatur!", "Adipisci",
+            "at", "corporis", "fugit", "ipsam", "minima", "quibusdam", "recusandae", "sed", "soluta", "ut,", "vel!"]}
         />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
