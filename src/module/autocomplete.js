@@ -17,9 +17,9 @@ class Autocomplete extends Component {
    * @param value
    */
   changed(value){
-    if(value){
-      this.setState({value})
-    }
+    this.getData(value)
+    this.setState({value})
+  }
   }
   
   /**
