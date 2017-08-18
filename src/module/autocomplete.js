@@ -20,7 +20,16 @@ class Autocomplete extends Component {
     this.getData(value)
     this.setState({value})
   }
+  
+  /**
+   * get data from source based on keyword
+   * @param val
+   */
+  getData(val){
+    const options = this.props.source.filter(option => option.indexOf(val) >= 0)
+    this.setState({options})
   }
+  
   
   /**
    * render the component
