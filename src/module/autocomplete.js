@@ -11,7 +11,8 @@ class Autocomplete extends Component {
     super(props)
     this.state = {
       value: '',
-      options: props.source
+      options: props.source,
+      active: false
     }
     this.getData = debounce(this.getData, 300)
   }
