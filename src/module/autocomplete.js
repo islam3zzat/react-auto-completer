@@ -17,6 +17,30 @@ class Autocomplete extends Component {
     this.getData = debounce(this.getData, 300)
     // bind component methods
     this.setActive = this.setActive.bind(this)
+    this.changed = this.changed.bind(this)
+  }
+  /**
+   * once component mounted
+   */
+  componentDidMount(){
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
+  }
+  /**
+   * before leaving
+   */
+  componentWillUnmount(){
+    document.removeEventListener('click', this.handleOutsideClick.bind(this));
+  }
+  
+  /**
+   * handle click outside wrapper
+   * @param e
+   */
+  handleOutsideClick(e) {
+    let wrapper = ReactDOM.findDOMNode(this.refs.wrap)
+    if(!wrapper.contains(e.target)){
+      this.setActive(false);
+    }
   }
   
   /**
