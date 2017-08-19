@@ -4,6 +4,7 @@ import Input from './component/Input'
 import Results from './component/Results'
 import Wrapper from './styled/Wrapper'
 import debounce from 'lodash.debounce'
+import ReactDOM from 'react-dom';
 
 class Autocomplete extends Component {
   constructor(props){
