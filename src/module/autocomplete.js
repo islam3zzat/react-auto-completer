@@ -15,6 +15,8 @@ class Autocomplete extends Component {
       active: false
     }
     this.getData = debounce(this.getData, 300)
+    // bind component methods
+    this.setActive = this.setActive.bind(this)
   }
   
   /**
@@ -35,7 +37,16 @@ class Autocomplete extends Component {
     this.setState({options})
   }
   
-  
+  /**
+   * set weather results active state
+   * @param active
+   */
+  setActive(active){
+    if(active !== this.state.active){
+      this.setState({active})
+    }
+    
+  }
   /**
    * render the component
    * @return {XML}
@@ -45,6 +56,8 @@ class Autocomplete extends Component {
         <Wrapper>
           <Input value={this.state.value}  changed={this.changed.bind(this)} placeholder={this.props.placeholder}/>
           <Results options={this.state.options}/>
+            active={this.state.active}
+            setActive={this.setActive}
         </Wrapper>
     );
   }
