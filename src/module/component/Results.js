@@ -2,8 +2,8 @@ import React from 'react'
 import ResultItem from './ResultsItem'
 import Results from '../styled/Results'
 
-export default ({options}) => {
-  if (options.length) {
+export default ({options, active}) => {
+  if (options.length && active) {
     return <Results>
       {
         options.map((option, i) => (
