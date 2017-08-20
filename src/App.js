@@ -14,6 +14,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </div>
         <Autocomplete
+          filterResponse={filterResponse}
+          url="https://api.github.com/search/repositories"
+          method="GET"
+          searchKey="q"
           placeholder="Search..."
           source={["Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipisicing", "elit.", "Asperiores,",
             "fugiat", "quia", "quibusdam", "quidem", "repellendus", "sunt.", "Minima,", "nam", "pariatur!", "Adipisci",
