@@ -29,7 +29,7 @@ import Autocomplete 'react-auto-completer'
 | Prop          |  Type          |      Description      |  Default value |
 |---------------|:--------------:|:---------------------|:---------------|
 | placeholder   | String         | input Placeholder     | Placeholder    |
-| list          | Array          | static results list   | Empty array [] |
+| source          | Array          | static results list   | Empty array [] |
 
 
 ## Build Setup
