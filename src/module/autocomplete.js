@@ -5,6 +5,7 @@ import Results from './component/Results'
 import Wrapper from './styled/Wrapper'
 import debounce from 'lodash.debounce'
 import ReactDOM from 'react-dom';
+import {fetchApi} from './autocomplet.helpers'
 
 class Autocomplete extends Component {
   constructor(props){
