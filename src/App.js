@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Autocomplete from './module/autocomplete'
 
+function filterResponse(res){
+  return res.data.items.map(i => i.full_name)
+}
 class App extends Component {
   render() {
     return (
