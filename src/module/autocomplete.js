@@ -66,8 +66,13 @@ class Autocomplete extends Component {
    * @param val
    */
   getData(val){
-    const options = this.props.source.filter(option => option.indexOf(val) >= 0)
-    this.setState({options})
+    let {url, method, searchKey, filterResponse} = this.props;
+    if(this.props.url){
+      fetchApi({url, method, val, searchKey}).then(filterResponse).then(this.setOptions);
+    } else {
+      const options = this.props.source.filter(option => option.indexOf(val) >= 0)
+      this.setOptions(options)
+    }
   }
   
   /**
