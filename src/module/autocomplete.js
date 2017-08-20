@@ -10,10 +10,11 @@ import {fetchApi} from './autocomplet.helpers'
 class Autocomplete extends Component {
   constructor(props){
     super(props)
+    // if url is provided neglect provided options
+    let options = props.url ? []: props.source
     this.state = {
       value: '',
-      options: props.source,
-      active: false
+      options
     }
     this.getData = debounce(this.getData, 300)
     // bind component methods
