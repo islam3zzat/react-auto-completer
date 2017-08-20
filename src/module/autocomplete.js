@@ -20,6 +20,7 @@ class Autocomplete extends Component {
     // bind component methods
     this.setActive = this.setActive.bind(this)
     this.changed = this.changed.bind(this)
+    this.setOptions = this.setOptions.bind(this)
   }
   /**
    * once component mounted
@@ -53,7 +54,13 @@ class Autocomplete extends Component {
     this.getData(value)
     this.setState({value})
   }
-  
+  /**
+   * update options
+   * @param data
+   */
+  setOptions(data){
+    this.setState({options: data});
+  }
   /**
    * get data from source based on keyword
    * @param val
