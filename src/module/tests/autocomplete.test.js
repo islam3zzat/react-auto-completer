@@ -46,4 +46,8 @@ describe('user provided source', () => {
     let mountedAutocomplete = mount(autoComplete)
     expect(mountedAutocomplete.state().active).toBeFalsy()
   })
+  it('should have no list items', () => {
+    let mountedAutocomplete = mount(autoComplete)
+    expect(mountedAutocomplete.find('li').length).toBe(0);
+  })
 })
