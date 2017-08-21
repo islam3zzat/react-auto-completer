@@ -38,4 +38,8 @@ describe('user provided source', () => {
     autoComplete = <Autocomplete source={mockSource} />
     renderedAutocomplete = render(autoComplete)
   })
+  it('shouldnt show options by default', () => {
+    let ul = renderedAutocomplete.find('ul')
+    expect(ul.length).toBe(0)
+  })
 })
