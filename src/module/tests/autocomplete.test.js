@@ -50,4 +50,9 @@ describe('user provided source', () => {
     let mountedAutocomplete = mount(autoComplete)
     expect(mountedAutocomplete.find('li').length).toBe(0);
   })
+  it('should have provided list items', () => {
+    let mountedAutocomplete = mount(autoComplete)
+    mountedAutocomplete.find('input').simulate('focus');
+    expect(mountedAutocomplete.find('li').length).toBe(mockSource.length);
+  })
 })
