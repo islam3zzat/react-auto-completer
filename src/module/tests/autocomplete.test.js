@@ -32,3 +32,5 @@ describe('user provided props', () => {
     expect(input.attr('placeholder')).toBe('search please')
   })
 })
+describe('user provided source', () => {
+})
