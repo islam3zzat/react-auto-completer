@@ -42,4 +42,8 @@ describe('user provided source', () => {
     let ul = renderedAutocomplete.find('ul')
     expect(ul.length).toBe(0)
   })
+  it('shouldnt be active by default', () => {
+    let mountedAutocomplete = mount(autoComplete)
+    expect(mountedAutocomplete.state().active).toBeFalsy()
+  })
 })
