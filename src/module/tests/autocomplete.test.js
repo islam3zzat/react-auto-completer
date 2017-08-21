@@ -33,4 +33,9 @@ describe('user provided props', () => {
   })
 })
 describe('user provided source', () => {
+  let autoComplete, renderedAutocomplete
+  beforeAll(() => {
+    autoComplete = <Autocomplete source={mockSource} />
+    renderedAutocomplete = render(autoComplete)
+  })
 })
