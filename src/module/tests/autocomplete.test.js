@@ -33,21 +33,20 @@ describe('user provided props', () => {
   })
 })
 describe('user provided source', () => {
-  let autoComplete, renderedAutocomplete
+  let autoComplete, renderedAutocomplete, shallowedAutocomplete
   beforeAll(() => {
     autoComplete = <Autocomplete source={mockSource} />
     renderedAutocomplete = render(autoComplete)
+    shallowedAutocomplete = shallow(autoComplete)
   })
   it('shouldnt show options by default', () => {
     let ul = renderedAutocomplete.find('ul')
     expect(ul.length).toBe(0)
   })
   it('shouldnt be active by default', () => {
-    let shallowedAutocomplete = shallow(autoComplete)
     expect(shallowedAutocomplete.root.state().active).toBeFalsy()
   })
   it('should have no list items', () => {
-    let shallowedAutocomplete = shallow(autoComplete)
     expect(shallowedAutocomplete.find('li').length).toBe(0);
   })
   it('should have provided list items', () => {
