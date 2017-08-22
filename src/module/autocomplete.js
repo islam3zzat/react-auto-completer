@@ -99,7 +99,7 @@ class Autocomplete extends Component {
           <Input
             active={this.state.active}
             setActive={this.setActive}
-            value={this.state.value}
+            value={this.props.value}
             changed={this.changed}
             placeholder={this.props.placeholder}/>
           <Results active={this.state.active} options={this.state.options}/>
