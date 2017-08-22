@@ -13,7 +13,6 @@ class Autocomplete extends Component {
     // if url is provided neglect provided options
     let options = props.url ? []: props.source
     this.state = {
-      value: '',
       options
     }
     this.getData = debounce(this.getData, 300)
@@ -21,6 +20,7 @@ class Autocomplete extends Component {
     this.setActive = this.setActive.bind(this)
     this.changed = this.changed.bind(this)
     this.setOptions = this.setOptions.bind(this)
+    this.selectOption = this.selectOption.bind(this)
   }
   /**
    * once component mounted
@@ -53,6 +53,10 @@ class Autocomplete extends Component {
   changed(value){
     this.getData(value)
     this.setState({value})
+  }
+  selectOption(option){
+    this.props.setOption(option)
+    this.setActive(false)
   }
   /**
    * update options
