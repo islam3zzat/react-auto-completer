@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Autocomplete from '../autocomplete';
-import {render, mount} from 'enzyme';
+import {render, shallow, mount } from 'enzyme';
 
 const mockSource  = [
   'Lorem',
