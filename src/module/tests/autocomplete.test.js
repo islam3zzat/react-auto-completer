@@ -43,12 +43,12 @@ describe('user provided source', () => {
     expect(ul.length).toBe(0)
   })
   it('shouldnt be active by default', () => {
-    let mountedAutocomplete = mount(autoComplete)
-    expect(mountedAutocomplete.state().active).toBeFalsy()
+    let shallowedAutocomplete = shallow(autoComplete)
+    expect(shallowedAutocomplete.root.state().active).toBeFalsy()
   })
   it('should have no list items', () => {
-    let mountedAutocomplete = mount(autoComplete)
-    expect(mountedAutocomplete.find('li').length).toBe(0);
+    let shallowedAutocomplete = shallow(autoComplete)
+    expect(shallowedAutocomplete.find('li').length).toBe(0);
   })
   it('should have provided list items', () => {
     let mountedAutocomplete = mount(autoComplete)
