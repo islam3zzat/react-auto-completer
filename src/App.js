@@ -15,7 +15,6 @@ class App extends Component {
         </div>
         <Autocomplete
           filterResponse={filterResponse}
-          url="https://api.github.com/search/repositories"
           method="GET"
           searchKey="q"
           placeholder="Search..."
