@@ -7,7 +7,7 @@ export default ({options, active, select}) => {
     return <Results>
       {
         options.map((option, i) => (
-            <ResultItem select={select} key={`result${i}`} data={option} />
+            <ResultItem tabIndex={i+1} select={select} key={`result${i}`} data={option} />
         ))
       }
     </Results>
