@@ -57,6 +57,7 @@ class Autocomplete extends Component {
   }
   selectOption(option){
     this.props.setOption(option)
+    this.setState({value: option})
     this.setActive(false)
   }
   /**
