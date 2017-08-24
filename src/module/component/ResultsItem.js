@@ -9,6 +9,12 @@ export default ({data, select, tabIndex}) => {
         if(e.target.nextElementSibling){
           e.target.nextElementSibling.focus()
         }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        if(e.target.previousElementSibling){
+          e.target.previousElementSibling.focus()
+        }
+      }
     }}
     onKeyPress={(e)=>{
       if(e.key === 'Enter') select(data)}
