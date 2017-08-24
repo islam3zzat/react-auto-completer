@@ -8,6 +8,14 @@ export default ({value, changed, placeholder, active, setActive}) => (
     type="text"
     tabIndex={-1}
     onChange={(e)=>{changed(e.target.value)}}
+    onKeyDown={(e)=>{
+      if(e.key === 'ArrowDown'){
+        e.preventDefault()
+        if(e.target.nextElementSibling && e.target.nextElementSibling.firstChild){
+          e.target.nextElementSibling.firstChild.focus()
+        }
+      }
+    }}
     value={value}
     placeholder={placeholder}
   />
