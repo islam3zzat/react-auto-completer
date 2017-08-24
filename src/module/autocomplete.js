@@ -13,7 +13,8 @@ class Autocomplete extends Component {
     // if url is provided neglect provided options
     let options = props.url ? []: props.source
     this.state = {
-      options
+      options,
+      value: props.value
     }
     this.getData = debounce(this.getData, 300)
     // bind component methods
