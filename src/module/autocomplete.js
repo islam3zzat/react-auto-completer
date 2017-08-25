@@ -41,7 +41,7 @@ class Autocomplete extends Component {
    * @param e
    */
   handleOutsideClick(e) {
-    let wrapper = ReactDOM.findDOMNode(this.refs.wrap)
+    let wrapper = ReactDOM.findDOMNode(this.wrap)
     if(!wrapper.contains(e.target)){
       this.setActive(false);
     }
@@ -97,7 +97,7 @@ class Autocomplete extends Component {
    */
   render() {
     return (
-        <Wrapper ref="wrap">
+        <Wrapper ref={wrap => this.wrap = wrap}>
           <Input
             active={this.state.active}
             setActive={this.setActive}
