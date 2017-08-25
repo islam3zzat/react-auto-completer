@@ -117,6 +117,7 @@ class Autocomplete extends Component {
       placeholder: PropTypes.string,
       url: PropTypes.string,
       searchKey: PropTypes.string,
+      additionalParams: PropTypes.object,
       method: PropTypes.string,
       source: PropTypes.array,
       filterResponse: PropTypes.func
@@ -130,7 +131,8 @@ class Autocomplete extends Component {
   static get defaultProps() {
     return {
       placeholder: 'Placeholder',
-      source: []
+      source: [],
+      additionalParams: {}
     }
   }
 }
