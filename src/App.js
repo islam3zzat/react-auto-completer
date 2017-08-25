@@ -28,7 +28,8 @@ class App extends Component {
           filterResponse={filterResponse}
           url="https://api.github.com/search/repositories"
           searchKey="q"
-          additionalParams={}
+          additionalParams={{}}
+          additionalHeaders={{'Content-Type': 'application/json'}}
           method="GET"
           setOption={this.setOption}
           value={this.state.value}
