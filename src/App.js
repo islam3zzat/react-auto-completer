@@ -26,6 +26,7 @@ class App extends Component {
         <h2>{this.state.value}</h2>
         <Autocomplete
           filterResponse={filterResponse}
+          url="https://api.github.com/search/repositories"
           method="GET"
           setOption={this.setOption}
           value={this.state.value}
