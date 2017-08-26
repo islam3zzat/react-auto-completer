@@ -18,8 +18,11 @@ import Autocomplete 'react-auto-completer'
 ## Usage
 ``` html
 <Autocomplete
-  placeholder=<placeholder>
-  source=<list>
+    placeholder="placeholder"
+    setOption={option => {this.state.val = option}}
+    url="http://external-api.io/users/"
+    searchKey="GET"
+    filterResponse={(res) => res.data.items.map(x => x.fullName )}
   >
 </Autocomplete>
 ```
@@ -36,7 +39,6 @@ import Autocomplete 'react-auto-completer'
 | searchKey          | String          | to be passed with the api url to be the param name of the search   | null |
 | additionalParams  | Object          | additional params to be passed with the request   | null |
 | additionalHeaders  | Object          | additional headers to be passed with the request   | null |
-| source  | [] | data source insread of server side source  | null |
 | filterResponse  | Function | transform resulted values| null |
 
 
