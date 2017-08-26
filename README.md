@@ -44,12 +44,6 @@ import Autocomplete 'react-auto-completer'
 | afterSearch  | Function | hock to be executed after search takes value as argument| null |
 | beforeUpdateValue  | Function | hock to be executed before update value takes value as argument| null |
 | afterUpdateValue  | Function | hock to be executed after update value takes value as argument| null |
-
-
-
-
-
-
 ## Build Setup
 
 ``` bash
