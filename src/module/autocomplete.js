@@ -60,16 +60,16 @@ class Autocomplete extends Component {
   }
   selectOption(option){
     if(this.props.afterSearch) {
-      this.props.afterSearch(value)
+      this.props.afterSearch(option)
     }
     if(this.props.beforeUpdateValue) {
-      this.props.beforeUpdateValue(value)
+      this.props.beforeUpdateValue(option)
     }
   
     this.props.setOption(option)
     this.setState({value: option})
     if(this.props.afterUpdateValue) {
-      this.props.afterUpdateValue(value)
+      this.props.afterUpdateValue(option)
     }
   
     this.setActive(false)
