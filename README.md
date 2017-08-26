@@ -40,6 +40,14 @@ import Autocomplete 'react-auto-completer'
 | additionalParams  | Object          | additional params to be passed with the request   | null |
 | additionalHeaders  | Object          | additional headers to be passed with the request   | null |
 | filterResponse  | Function | transform resulted values| null |
+| beforeSearch  | Function | hock to be executed before search takes value as argument| null |
+| afterSearch  | Function | hock to be executed after search takes value as argument| null |
+| beforeUpdateValue  | Function | hock to be executed before update value takes value as argument| null |
+| afterUpdateValue  | Function | hock to be executed after update value takes value as argument| null |
+
+
+
+
 
 
 ## Build Setup
