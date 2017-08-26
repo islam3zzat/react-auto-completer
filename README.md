@@ -19,7 +19,7 @@ import Autocomplete 'react-auto-completer'
 ``` html
 <Autocomplete
   placeholder=<placeholder>
-  list=<list>
+  source=<list>
   >
 </Autocomplete>
 ```
@@ -30,6 +30,13 @@ import Autocomplete 'react-auto-completer'
 |---------------|:--------------:|:---------------------|:---------------|
 | placeholder   | String         | input Placeholder     | Placeholder    |
 | source          | Array          | static results list   | Empty array [] |
+| url          | String          | endpoint url   | null |
+| method          | String          | HTTP method   | GET |
+| searchKey          | String          | to be passed with the api url to be the param name of the search   | null |
+| additionalParams  | Object          | additional params to be passed with the request   | null |
+| additionalHeaders  | Object          | additional headers to be passed with the request   | null |
+| source  | [] | data source insread of server side source  | null |
+| filterResponse  | Function | transform resulted values| null |
 
 
 ## Build Setup
