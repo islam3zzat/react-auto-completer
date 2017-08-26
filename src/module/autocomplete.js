@@ -133,8 +133,7 @@ class Autocomplete extends Component {
     return {
       placeholder: 'Placeholder',
       source: [],
-      additionalParams: {},
-      additionalHeaders: {}
+      method: 'GET'
     }
   }
 }
