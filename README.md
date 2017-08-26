@@ -29,7 +29,8 @@ import Autocomplete 'react-auto-completer'
 | Prop          |  Type          |      Description      |  Default value |
 |---------------|:--------------:|:---------------------|:---------------|
 | placeholder   | String         | input Placeholder     | Placeholder    |
-| source          | Array          | static results list   | Empty array [] |
+| source          | Array        | static results list   | Empty array [] |
+| setOption     | setOption      | method that expect selected options | null | 
 | url          | String          | endpoint url   | null |
 | method          | String          | HTTP method   | GET |
 | searchKey          | String          | to be passed with the api url to be the param name of the search   | null |
