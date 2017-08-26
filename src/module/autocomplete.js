@@ -52,12 +52,26 @@ class Autocomplete extends Component {
    * @param value
    */
   changed(value){
+    if(this.props.beforeSearch) {
+      this.props.beforeSearch(value)
+    }
     this.getData(value)
     this.setState({value})
   }
   selectOption(option){
+    if(this.props.afterSearch) {
+      this.props.afterSearch(value)
+    }
+    if(this.props.beforeUpdateValue) {
+      this.props.beforeUpdateValue(value)
+    }
+  
     this.props.setOption(option)
     this.setState({value: option})
+    if(this.props.afterUpdateValue) {
+      this.props.afterUpdateValue(value)
+    }
+  
     this.setActive(false)
   }
   /**
@@ -121,7 +135,12 @@ class Autocomplete extends Component {
       additionalHeaders: PropTypes.object,
       method: PropTypes.string,
       source: PropTypes.array,
-      filterResponse: PropTypes.func
+      filterResponse: PropTypes.func,
+      beforeSearch: PropTypes.func,
+      afterSearch: PropTypes.func,
+      beforeUpdateValue: PropTypes.func,
+      afterUpdateValue: PropTypes.func,
+      setOption: PropTypes.func,
     }
   }
   
