@@ -54,4 +54,13 @@ describe('user provided source', () => {
     mountedAutocomplete.find('input').simulate('focus');
     expect(mountedAutocomplete.find('li').length).toBe(mockSource.length);
   })
+  //  hocks
+  it('should call beforeSearch with the value', () => {
+    const beforeSearchSpy = jest.fn()
+    let autoComplete = <Autocomplete source={mockSource} beforeSearch={beforeSearchSpy}/>
+    let mountedAutocomplete = mount(autoComplete)
+    mountedAutocomplete.setState({value: 'asdasd'})
+    mountedAutocomplete.find('input').simulate('change', {target: {value: 'My new value'}});
+    expect(beforeSearchSpy).toBeCalledWith('My new value')
+  })
 })
