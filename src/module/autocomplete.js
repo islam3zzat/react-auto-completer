@@ -59,9 +59,6 @@ class Autocomplete extends Component {
     this.setState({value})
   }
   selectOption(option){
-    if(this.props.afterSearch) {
-      this.props.afterSearch(option)
-    }
     if(this.props.beforeUpdateValue) {
       this.props.beforeUpdateValue(option)
     }
@@ -80,6 +77,9 @@ class Autocomplete extends Component {
    */
   setOptions(data){
     this.setState({options: data});
+    if(this.props.afterSearch) {
+      this.props.afterSearch(data)
+    }
   }
   /**
    * get data from source based on keyword
