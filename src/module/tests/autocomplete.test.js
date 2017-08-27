@@ -63,4 +63,12 @@ describe('user provided source', () => {
     mountedAutocomplete.find('input').simulate('change', {target: {value: 'My new value'}});
     expect(beforeSearchSpy).toBeCalledWith('My new value')
   })
+  it('should call afterSearch with the value', () => {
+    const afterSearchSpy = jest.fn()
+    let autoComplete = <Autocomplete source={mockSource} afterSearch={afterSearchSpy}/>
+    let mountedAutocomplete = mount(autoComplete)
+    mountedAutocomplete.setState({value: 'asdasd'})
+    mountedAutocomplete.find('input').simulate('change', {target: {value: 'My new value'}});
+    expect(afterSearchSpy).toBeCalledWith('My new value')
+  })
 })
