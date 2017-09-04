@@ -88,7 +88,16 @@ class Autocomplete extends Component {
   getData(val){
     let {url, method, searchKey, filterResponse} = this.props;
     if(this.props.url){
-      fetchApi({url, method, val, searchKey}, this.props.additionalParams, this.props.additionalHeaders).then(filterResponse).then(this.setOptions);
+      fetchApi({url, method, val, searchKey}, this.props.additionalParams, this.props.additionalHeaders)
+        .then(filterResponse)
+        .then(this.setOptions)
+        .catch( err => {
+          if(!err.__CANCEL__) {
+            if (this.props.handleResponseError) {
+              this.props.handleResponseError(err);
+            }
+          }
+        });
     } else {
       const options = this.props.source.filter(option => option.indexOf(val) >= 0)
       this.setOptions(options)
@@ -136,6 +145,7 @@ class Autocomplete extends Component {
       method: PropTypes.string,
       source: PropTypes.array,
       filterResponse: PropTypes.func,
+      handleResponseError: PropTypes.func,
       beforeSearch: PropTypes.func,
       afterSearch: PropTypes.func,
       beforeUpdateValue: PropTypes.func,
